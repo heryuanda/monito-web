@@ -2,7 +2,7 @@
 import { Articles } from "@/utils/types";
 import { PropType } from "vue";
 
-const props = defineProps({
+defineProps({
   data: {
     type: Object as PropType<Articles>,
     default: {},

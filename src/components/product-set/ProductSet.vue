@@ -14,7 +14,7 @@ const ArticleCard = defineAsyncComponent(
   () => import("@components/card/ArticleCard.vue")
 );
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: "",

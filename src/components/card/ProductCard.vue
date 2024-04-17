@@ -3,7 +3,7 @@ import { Products } from "@/utils/types";
 import { PropType } from "vue";
 import { currencyFormat } from "@/utils/currency";
 
-const props = defineProps({
+defineProps({
   data: {
     type: Object as PropType<Products>,
     default: {},
