@@ -13,10 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 
   --primary-yellow: #fceed5;
+  --primary-yellow-dark: #ffb775;
   --primary-blue: #003459;
+  --primary-blue-dark: #002a48;
   --secondary-yellow: #f7dba7;
   --neutral: #242b33;
   --neutral-60: #667479;
+  --neutral-20: #ccd1d2;
   --blue-sea: #00a7e7;
 }
 html {
@@ -38,6 +41,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
   @media screen and (max-width: 767px) {
     padding: 0px 16px;
   }
@@ -69,6 +73,7 @@ h3 {
   column-gap: 0.5rem;
   line-height: 24px;
   justify-content: center;
+  white-space: nowrap;
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Articles, Products } from "@/utils/types";
+import { Articles, ProductAttribute, Products } from "@/utils/types";
 import { PropType, defineAsyncComponent } from "vue";
 import { useCommonStore } from "@/stores/common";
 import { storeToRefs } from "pinia";
@@ -39,6 +39,10 @@ defineProps({
     type: String,
     default: "product",
   },
+  attributes: {
+    type: Object as PropType<ProductAttribute[]>,
+    default: [],
+  },
 });
 
 const store = useCommonStore();
@@ -66,9 +70,14 @@ const { isMobile } = storeToRefs(store);
         v-for="(product, index) in products"
         :key="`product-${index}`"
         :data="product"
+        :attributes="attributes"
       />
     </div>
-    <div class="product-set__articles" v-if="variant === 'article'">
+    <div
+      class="product-set__articles"
+      v-if="variant === 'article'"
+      :style="{ '--article-length': articles.length }"
+    >
       <ArticleCard
         v-for="(article, index) in articles"
         :key="`product-${index}`"
@@ -119,7 +128,11 @@ const { isMobile } = storeToRefs(store);
   &__articles {
     display: grid;
     gap: 12px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    @media screen and (min-width: 767px) {
+      grid-template-columns: repeat(var(--article-length), 1fr);
+    }
   }
   &__mobile-redirect {
     margin-top: 16px;

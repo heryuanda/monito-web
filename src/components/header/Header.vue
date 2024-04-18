@@ -31,7 +31,11 @@ onUnmounted(() => {
           <Button
             variant="transparent"
             size="large"
-            :additional-style="{ padding: '0px', 'border-radius': '0px' }"
+            :additional-style="{
+              padding: '0px',
+              'border-radius': '0px',
+              'line-height': 0,
+            }"
           >
             <span class="material-symbols-outlined"> menu </span>
           </Button>
@@ -58,7 +62,11 @@ onUnmounted(() => {
           <Button
             variant="transparent"
             size="large"
-            :additional-style="{ padding: '0px', 'border-radius': '0px' }"
+            :additional-style="{
+              padding: '0px',
+              'border-radius': '0px',
+              'line-height': 0,
+            }"
           >
             <span class="material-symbols-outlined"> search </span>
           </Button>
@@ -88,11 +96,13 @@ onUnmounted(() => {
     }
   }
   &__hamburger {
+    line-height: 0;
     @media screen and (min-width: 767px) {
       display: none;
     }
   }
   &__search-mobile {
+    line-height: 0;
     @media screen and (min-width: 767px) {
       display: none;
     }
@@ -131,7 +141,7 @@ onUnmounted(() => {
     align-items: center;
     column-gap: 48px;
   }
-  &__nav {
+  &-nav {
     @media screen and (max-width: 767px) {
       display: none;
     }

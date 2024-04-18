@@ -24,7 +24,7 @@ const props = defineProps({
   },
   additionalStyle: {
     type: Object,
-    default: "",
+    default: {},
   },
 });
 
