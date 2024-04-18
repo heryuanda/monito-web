@@ -1,8 +1,9 @@
 {
   "name": "monito-web",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "author": "Herri Yuanda <heryuanda@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
