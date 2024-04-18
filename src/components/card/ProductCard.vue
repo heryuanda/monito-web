@@ -24,10 +24,7 @@ const convertWeights = (weight: number): string => {
     <div class="product-card__info">
       <h3 class="product-card__info-name">{{ data.name }}</h3>
       <div class="product-card__info-label-wrapper">
-        <template
-          v-for="(attribute, attrIndex) in attributes"
-          :key="'attr-' + attrIndex"
-        >
+        <template v-for="attribute in attributes" :key="'attr'">
           <p
             class="product-card__info-label"
             v-if="data[attribute.key as keyof typeof data]"
