@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { defineAsyncComponent, onMounted, onUnmounted, ref } from "vue";
 import clsx from "clsx";
+const Search = defineAsyncComponent(
+  () => import("@components/icons/Search.vue")
+);
+const Hamburger = defineAsyncComponent(
+  () => import("@components/icons/Hamburger.vue")
+);
+const ChevronDown = defineAsyncComponent(
+  () => import("@components/icons/ChevronDown.vue")
+);
 const Button = defineAsyncComponent(
   () => import("@components/button/Button.vue")
 );
@@ -37,7 +46,7 @@ onUnmounted(() => {
               'line-height': 0,
             }"
           >
-            <span class="material-symbols-outlined"> menu </span>
+            <Hamburger />
           </Button>
         </div>
         <div class="header__logo">
@@ -49,13 +58,13 @@ onUnmounted(() => {
         <div class="header__search-desktop">
           <div class="header__search-desktop__input">
             <input type="text" placeholder="Search something here!" />
-            <span class="material-symbols-outlined"> search </span>
+            <Search />
           </div>
           <Button variant="primary" size="medium"> Join the community </Button>
           <div class="header__search-desktop__dropdown">
             <img src="@assets/images/vietnam.svg" alt="flag" />
             <p>VND</p>
-            <span class="material-symbols-outlined"> expand_more </span>
+            <ChevronDown />
           </div>
         </div>
         <div class="header__search-mobile">
@@ -68,7 +77,7 @@ onUnmounted(() => {
               'line-height': 0,
             }"
           >
-            <span class="material-symbols-outlined"> search </span>
+            <Search />
           </Button>
         </div>
       </div>
@@ -116,6 +125,7 @@ onUnmounted(() => {
     column-gap: 16px;
     &__input {
       position: relative;
+      color: var(--neutral-60);
       input {
         width: 280px;
         background-color: #fff;
@@ -123,7 +133,7 @@ onUnmounted(() => {
         border: 1px solid #fff;
         border-radius: 46px;
       }
-      span {
+      svg {
         position: absolute;
         left: 16px;
         top: 50%;

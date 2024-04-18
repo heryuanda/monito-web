@@ -9,6 +9,12 @@ import { ProductAttribute } from "@/utils/types";
 const Button = defineAsyncComponent(
   () => import("@components/button/Button.vue")
 );
+const PlayCircle = defineAsyncComponent(
+  () => import("@components/icons/PlayCircle.vue")
+);
+const ChevronRight = defineAsyncComponent(
+  () => import("@components/icons/ChevronRight.vue")
+);
 const ProductSet = defineAsyncComponent(
   () => import("@components/product-set/ProductSet.vue")
 );
@@ -58,7 +64,7 @@ const productSet2Attributes: ProductAttribute[] = [
             <Button variant="outline" size="large">
               <p class="btn-label">
                 View Intro
-                <span class="material-symbols-outlined"> play_circle </span>
+                <PlayCircle />
               </p>
             </Button>
             <Button variant="primary" size="large">
@@ -128,7 +134,7 @@ const productSet2Attributes: ProductAttribute[] = [
             <Button variant="outline" size="medium">
               <p class="btn-label">
                 View Intro
-                <span class="material-symbols-outlined"> play_circle </span>
+                <PlayCircle />
               </p>
             </Button>
             <Button variant="primary" size="medium">
@@ -160,7 +166,7 @@ const productSet2Attributes: ProductAttribute[] = [
             <Button variant="outline" size="medium">
               <RouterLink to="#" class="btn-label">
                 View all our sellers
-                <span class="material-symbols-outlined"> chevron_right </span>
+                <ChevronRight />
               </RouterLink>
             </Button>
           </div>
@@ -206,7 +212,7 @@ const productSet2Attributes: ProductAttribute[] = [
               <Button variant="outline" size="medium">
                 <p class="btn-label">
                   View Intro
-                  <span class="material-symbols-outlined"> play_circle </span>
+                  <PlayCircle />
                 </p>
               </Button>
             </div>

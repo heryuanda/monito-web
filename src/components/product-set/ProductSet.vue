@@ -7,6 +7,9 @@ import { storeToRefs } from "pinia";
 const Button = defineAsyncComponent(
   () => import("@components/button/Button.vue")
 );
+const ChevronRight = defineAsyncComponent(
+  () => import("@components/icons/ChevronRight.vue")
+);
 const ProductCard = defineAsyncComponent(
   () => import("@components/card/ProductCard.vue")
 );
@@ -60,7 +63,7 @@ const { isMobile } = storeToRefs(store);
         <Button variant="outline" size="medium">
           <RouterLink :to="redirectionUrl" class="btn-label">
             View more
-            <span class="material-symbols-outlined"> chevron_right </span>
+            <ChevronRight />
           </RouterLink>
         </Button>
       </div>
@@ -88,7 +91,7 @@ const { isMobile } = storeToRefs(store);
       <Button variant="outline" size="medium" full>
         <RouterLink :to="redirectionUrl" class="btn-label">
           View more
-          <span class="material-symbols-outlined"> chevron_right </span>
+          <ChevronRight />
         </RouterLink>
       </Button>
     </div>
